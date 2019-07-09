@@ -6,51 +6,53 @@
 - Create the Phrase class in the Phrase.js file.
 */
 
-let phrases = [
-    {
-        quote: 'Today is your day',
-    },
-    {
-        quote: 'Are we there yet',
-    },
-    {
-        quote: 'What is in your wallet',
-    },
-    {
-        quote: 'Can you hear me now'
-    },
-    {
-        quote: 'A diamond is forever',
-    }
+const phrase = [
+    'So Easy a Caveman Can Do It',
+    'Are we there yet',
+    'What is in your wallet',
+    'Can you hear me now',
+    'A diamond is forever'
 ];
 
-class Phrase {
+class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one class)
 
+    // Initializes a phrase property set to the phrase
+    //Takes the phrase being held and converts to lowercase
     constructor(phrase) {
-        phrases = getRandomPhrase();
-        this.phrase = phrase;
-    }
-    /* createPhrase() {
-        $()
-        let randomPhrase = Math.floor(phrases*length);
-       //phrase.characters = myString.string.length; 
-    
-       return String(this.phrase);
-      }*/
-
-    addPhraseToDisplay() {
+        this.phrase = phrase.toLowerCase();
         console.log(this.phrase);
-        //adds letter placeholder to display when the game starts
-        //Each letter is presented by an empty box (e.g. example_phrase_html.txt)
     }
 
-    checkLetter() {
-        // checks to see if the letter selected by the player matches a letter in the phrase
-        //filter() method
-    }
+    //     addPhraseToDisplay() // METHOD WHICH ADDS LETTER PLACEHOLDERS (BOXES) TO THE GAMEBOARD AT THE START
 
-    showMatchedLetter() {
-        // reveals correct matched letters on the board
-        // select all of the letter DOM elements that have a CSS class name......
-    }
+    //     // Go through the phrase and create <li> tags holding each letter and space. (I used a for loop)
+    //     // Use the "hide letter" class for letters and the "space" class for spaces
+    //     // Append each character to the #phrase ul (See below for how it will look as per example_phrase_html)
+
+    //     /******************************************************************
+    //         <div id="phrase" class="section">
+    //             <ul>
+    //                 <li class="hide letter h">h</li>
+    //                 <li class="hide letter o">o</li>
+    //                 <li class="hide letter w">w</li>
+    //                 <li class="space"> </li>
+    //                 <li class="hide letter a">a</li>
+    //                 <li class="hide letter r">r</li>
+    //                 <li class="hide letter e">e</li>
+    //                 <li class="space"> </li>
+    //                 <li class="hide letter y">y</li>
+    //                 <li class="hide letter o">o</li>
+    //                 <li class="hide letter u">u</li>
+    //             </ul>
+    //         </div>
+    //     *******************************************************************/
+
+
+    //     checkLetter() //METHOD THAT CHECKS EACH GUESSED LETTER TO SEE IF IT IS IN THE PHRASE
+
+    //     // Go through the phrase and test if the guessed letter matches any letter in the phrase. (I used a for loop again)
+
+
+    //     showMatchedLetter() // METHOD THAT REVEALS EACH LETTER ON THE BOARD THAT MATCHES THE PLAYER'S GUESS
+    //     // Remove the class of "hide" and add the class of "show"
 }

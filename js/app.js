@@ -2,23 +2,22 @@
  * Project 4 - OOP Game App
  * app.js */
 /* Goal: To create an new instance of the Game class and add event listeners to the start button
-and onscreen keyboard buttons.
-- window.prompt method
--evaluate user input
-var customerName = prompt("Please enter your name", "<name goes here>");
+and onscreen keyboard buttons.*/
 
-if (customerName!= null) {
 
-    document.getElementById("welcome").innerHTML =
+// Listening for "start game" button to be clicked
+$('#btn__reset').on('click', function (event) {
+    $(this.startGame).attr('id');
+    alert('Alert');  //Testing my button
+});
 
-    "Hello " + customerName + "! How are you today?";
-}
-*/
+// Listening for interactive keyboard to be clicked
+$('#qwerty').on('click', function (event) {
+    $(this.handleInteraction());
 
-//class Game  
-// add event listeners for start button and onscreen keyboard buttons
-// Click for start game
-// add click event listeners to each of the onscreen keyboard buttons - call handleInteraction()
 
-//Reset gameboard - between games
 
+
+
+});
+// Listening for physical keyboard to be pressed (For Exceeds only)
