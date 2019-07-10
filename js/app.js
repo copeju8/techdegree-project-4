@@ -6,18 +6,17 @@ and onscreen keyboard buttons.*/
 
 
 // Listening for "start game" button to be clicked
+
+let game;
+
 $('#btn__reset').on('click', function (event) {
-    $(this.startGame).attr('id');
-    alert('Alert');  //Testing my button
+    game = new Game();
+    game.startGame();
 });
+
 
 // Listening for interactive keyboard to be clicked
 $('#qwerty').on('click', function (event) {
     $(this.handleInteraction());
-
-
-
-
-
 });
 // Listening for physical keyboard to be pressed (For Exceeds only)

@@ -11,40 +11,57 @@ Create the Game class in the Game.js file.
 /*Game.js
 */
 
-
+//class Game { // CREATING GAME GLASS. (Entire Javascript file is this one class)
 
 class Game {
     constructor() {
         this.missed = 0;       // Track the number of missed guesses, initially set to 0
-        this.phrases = '';   // Store array of phrases
+        // Store array of phrases
+        this.phrases = [
+            new Phrase('So Easy a Caveman Can Do It'),
+            new Phrase('Are we there yet'),
+            new Phrase('What is in your wallet'),
+            new Phrase('What is in your wallet'),
+            new Phrase('Can you hear me now'),
+            new Phrase('A diamond is forever')
+        ];
         this.activePhrase = 'null';  //Initially there is no phrase chosen
+    }
 
+    // Previous lives reset
+    // Previous keyboard reset
+    // Random phrase is retrieved (getRandomPhrase())
+
+    startGame() {
+        $('#overlay').hide(2000);
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
+    };
+
+    getRandomPhrase() {
+
+        return this.phrases[Math.floor(Math.random() * this.phrases.length)];
     }
 
 
 
-};
-
-// //class Game { // CREATING GAME GLASS. (Entire Javascript file is this one class)
+}
 
 
 
-
-
-// startGame() // METHOD THAT INITIALIZES GAME
-// // Overlay disappears and game screen appears
-// // Previous lives reset
-// // Previous keyboard reset
-// // Random phrase is retrieved (getRandomPhrase())
-// // Phrase is displayed with objects hidden (addPhraseToDisplay())
+// Phrase is displayed with objects hidden (addPhraseToDisplay())
 
 
 
 
 
 
-// getRandomPhrase(phrase) // METHOD THAT SELECTS A RANDOM PHRASE 
-// // (Similar to Project 1 )
+
+
+
+
+
+
 
 
 // handleInteraction() // METHOD THAT CONTROLS MOST OF THE GAME LOGIC
