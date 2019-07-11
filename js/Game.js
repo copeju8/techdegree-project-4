@@ -43,60 +43,37 @@ class Game {
         return this.phrases[Math.floor(Math.random() * this.phrases.length)];
     }
 
+    // METHOD THAT CHECKS IF USER HAS WON
+    // Check if there are no more hidden letters in the phrase object, return true or false
+    checkForWin() {
+        return ('#phrase ul .hide').length === 0;
+    }
 
+    removeLife() {
+        // METHOD THAT REMOVES LIFE FROM SCOREBOARD WHEN CALLED
+        let $lives = $('#scoreboard li');
+        let $lifeToRemove = $lives.eq(this.missed);
+        let $imageToReplace = $lifeToRemove.children().first();
+        $imageToReplace.attr('src', 'images/lostHeart.png');
+        $imageToReplace.delay(1000).hide();
+        this.missed++;
+        if (this.missed === 5) {
+            this.gameOver();
+        }
+    }
 
+    gameOver() {
+        // METHOD THAT ENDS GAME AND DISPLAYS A MESSAGE ON WHETHER USER WINS OR LOSES
+        //($("#scoreboard li img").attr('images/lostHeart.png', '/images/liveHeart.png'));
+        //&("#scoreboard li img").show();
+
+        let $gameOverMessage = $("#game-over-message").show("slow");
+        let $restartGame = $("#overlay").show("slow");
+        $restartGame.delay(1000).show();
+
+    }
+    // Leaves game screen and goes back to overlay
 }
-
-
-
-// Phrase is displayed with objects hidden (addPhraseToDisplay())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// handleInteraction() // METHOD THAT CONTROLS MOST OF THE GAME LOGIC
-// // If user clicks on screen keyboard...
-// // Store the value of what the user clicked
-
-// // Disable whichever letter the user chose (Can't be chosen again)
-
-// // If the chosen letter matches a letter in the phrase (checkLetter())...
-// // Give it the "chosen" class (Highlights the letter in whatever color you choose... Css or JS)
-// // Show the matched letter: Un-hides the letter object (showMatchedLetter())
-// // If the user has won (checkForWin()) ...
-// // Ends game (gameOver())
-
-// // Otherwise/else (letter does NOT match)...
-// // Give it the "wrong" class (Highlights the letter in whatever color you choose... Css or JS)
-// // Remove 1 life
-
-
-// checkForWin() // METHOD THAT CHECKS IF USER HAS WON 
-// // Check if there are no more hidden letters in the phrase object, return true or false
-
-
-// removeLife() // METHOD THAT REMOVES LIFE FROM SCOREBOARD WHEN CALLED
-// // Storing all the "lives" (The heart icons)
-// // Points to which heart based on how many misses 
-// // Replaces that heart image with the "lost" heart image
-// // Missed guesses is incremented by 1
-
-// // If missed guesses is the maximum amount...
-// // Ends game(gameOver())
-
-
-// gameOver() // METHOD THAT ENDS GAME AND DISPLAYS A MESSAGE ON WHETHER USER WINS OR LOSES
-//     // Leaves game screen and goes back to overlay
 
 //     // If user has max misses, they lose and...
 //     //Display losing message

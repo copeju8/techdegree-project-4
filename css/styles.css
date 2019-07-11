@@ -80,6 +80,7 @@ button {
 }
 
 #phrase ul li{
+ /*user-select:none;   this command remove the letter highlighter feature*/
   margin-top: 15px;
 }
 

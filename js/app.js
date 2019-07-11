@@ -14,9 +14,18 @@ $('#btn__reset').on('click', function (event) {
     game.startGame();
 });
 
+// handleInteraction()
 
 // Listening for interactive keyboard to be clicked
-$('#qwerty').on('click', function (event) {
-    $(this.handleInteraction());
+
+$('#qwerty .key').on('click', function (event) {   ///class of key in the qwerty class
+    this.handleInteraction(event);
 });
+
+
+
+
+// }
+
+
 // Listening for physical keyboard to be pressed (For Exceeds only)
