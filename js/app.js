@@ -14,13 +14,19 @@ $('#btn__reset').on('click', function (event) {
     game.startGame();
 });
 
-// handleInteraction()
 
 // Listening for interactive keyboard to be clicked
 
-$('#qwerty .key').on('click', function (event) {   ///class of key in the qwerty class
-    this.handleInteraction(event);
+$('#qwerty .key').on('click', function (event) {
+    game.handleInteraction(event);              // The game class overs events for the whole keyboard.
+
 });
+
+
+
+
+    // }
+    // const btn1 = document.getElementById("button1")
 
 
 

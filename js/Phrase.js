@@ -15,7 +15,9 @@ class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one clas
     //addPhraseToDisplay() // METHOD WHICH ADDS LETTER PLACEHOLDERS (BOXES) TO THE GAMEBOARD AT THE START
 
     addPhraseToDisplay() {
-        // this.phrase.empty();
+        // Go through the phrase and create <li> tags holding each letter and space. (I used a for loop)
+        // Use the "hide letter" class for letters and the "space" class for spaces
+        // Append each character to the #phrase ul (See below for how it will look as per example_phrase_html)
         $('#phrase ul').empty();
         for (let i = 0; i < this.phrase.length; i++) {
             let char = this.phrase[i];
@@ -29,11 +31,18 @@ class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one clas
         }
     }
     //METHOD THAT CHECKS EACH GUESSED LETTER TO SEE IF IT IS IN THE PHRASE
+    // Go through the phrase and test if the guessed letter matches any letter in the phrase. (I used a for loop again)
     checkLetter(guess) {
+        console.log('I am in check letter');
         for (let i = 0; i < this.phrase.length; i++) {
+
             let currentPhrase = this.phrase[i];
+            console.log(currentPhrase);
             if (guess === currentPhrase) {
+                console.log('letterfound');
                 return true;
+
+
             }
         }
         return false;
@@ -44,15 +53,14 @@ class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one clas
         let $matchLetter = $('#phrase ul .' + guess);
         $matchLetter.removeClass('hide');
         $matchLetter.addClass('show');
+
     }
+
 
 };
 
 
 
-    //for (let i = 0; i < this.phrase.length; i++) {
-    //let currentPhrase = this.phrase[i];
-    // if (guess.value.match(this.phrase)) {
 
 
 
@@ -62,19 +70,4 @@ class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one clas
 
 
 
-// //     // }
-// //     //     
-// //     //     // Go through the phrase and create <li> tags holding each letter and space. (I used a for loop)
-// //     //     // Use the "hide letter" class for letters and the "space" class for spaces
-// //     //     // Append each character to the #phrase ul (See below for how it will look as per example_phrase_html)
-
-
-// checkLetter() 
-
-// // Go through the phrase and test if the guessed letter matches any letter in the phrase. (I used a for loop again)
-
-
-
-
-            // // Remove the class of "hide" and add the class of "show"
 
