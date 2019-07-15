@@ -66,6 +66,7 @@ button {
 }
 
 .main-container {
+  background-color: #FFA07A;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -164,6 +165,8 @@ button {
 /* Overlay */
 
 #overlay {
+  background-image: url(../images/startpic2.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -181,7 +184,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+background-color: #3a3f58;
 }
 
 .start a {

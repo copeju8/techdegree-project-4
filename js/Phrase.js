@@ -1,23 +1,21 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-/* Goal: To create a Phrase class to handle the creation of phases
+/* Goal: To create a Phrase class to handle the creation of phases*/
 
-- Create the Phrase class in the Phrase.js file.
-*/
-class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one class)
+class Phrase {
 
-    // Initializes a phrase property set to the phrase
-    //Takes the phrase being held and converts to lowercase - use phrase singular
+    // Initializes a phrase property set to the phrase and converting the phrase to lowercase.
     constructor(phrase) {
         this.phrase = phrase.toLowerCase();
     }
-    //addPhraseToDisplay() // METHOD WHICH ADDS LETTER PLACEHOLDERS (BOXES) TO THE GAMEBOARD AT THE START
+
+    //The addPhraseToDisplay() method add letters to the placeholder in the game box. 
+    //The loop goes through the each phrase and creates <li> tags holding each letter and space.
+    //The letters are hidden using the "hide letter" class and the "space" class for spaces.
+    //Each letter is then appended as a character to the "phrase ul" class.
 
     addPhraseToDisplay() {
-        // Go through the phrase and create <li> tags holding each letter and space. (I used a for loop)
-        // Use the "hide letter" class for letters and the "space" class for spaces
-        // Append each character to the #phrase ul (See below for how it will look as per example_phrase_html)
         $('#phrase ul').empty();
         for (let i = 0; i < this.phrase.length; i++) {
             let char = this.phrase[i];
@@ -30,32 +28,28 @@ class Phrase {  //CREATING PHRASE CLASS (Entire Javascript file is this one clas
             }
         }
     }
-    //METHOD THAT CHECKS EACH GUESSED LETTER TO SEE IF IT IS IN THE PHRASE
-    // Go through the phrase and test if the guessed letter matches any letter in the phrase. (I used a for loop again)
+    //The check letter method checks each guessed letter to see if it is in the phrase
+    // The if statement checks if the guessed letter matches any letter in the phrase generated from the for loop.
     checkLetter(guess) {
-        console.log('I am in check letter');
+        //console.log('I am in check letter');
         for (let i = 0; i < this.phrase.length; i++) {
 
             let currentPhrase = this.phrase[i];
             console.log(currentPhrase);
             if (guess === currentPhrase) {
-                console.log('letterfound');
+                //console.log('letterfound');
                 return true;
-
-
             }
         }
         return false;
     };
-    // METHOD THAT REVEALS EACH LETTER ON THE BOARD THAT MATCHES THE PLAYER'S GUESS
 
+    // The show matched letter method reveals whether each letter on the board matches the player's guess.
     showMatchedLetter(guess) {
         let $matchLetter = $('#phrase ul .' + guess);
         $matchLetter.removeClass('hide');
         $matchLetter.addClass('show');
-
     }
-
 
 };
 
