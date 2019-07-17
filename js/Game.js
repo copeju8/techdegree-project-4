@@ -50,7 +50,7 @@ class Game {
         const lostHeart = "images/lostHeart.png";   //variable holding image
 
         const $lives = $("#scoreboard li");           //identify the image element
-        let $removeLife = $lives.eq(this.missed);   //variable to hold the missed lives
+        let $removeLife = $lives.eq(this.missed - 1);   //variable to hold the missed lives/lostHeart starts sequentially per -1.
         let $replaceIMG = $removeLife.children().first();
         //variable to hold the removed lives
         $replaceIMG.attr("src", lostHeart);         //actually get the lost image
